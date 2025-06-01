@@ -1,0 +1,312 @@
+/* Custom CSS for Portfolio */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+/* Dark/Light Mode Variables dcf5f5 */
+:root {
+--bg-dark: #0a0a0a;
+--bg-light: #ffffff;
+--star-dark: #ffffff;
+--star-light: #6ecef1;
+--text-primary-dark: #ffffff;
+--text-primary-light: #030303;
+--text-secondary-dark: #ffffff;
+--text-secondary-light: #000000;
+}
+
+/* Body Styles */
+body {
+background: var(--bg-dark);
+font-family: 'Orbitron', -apple-system, BlinkMacSystemFont, sans-serif;
+overflow-x: hidden;
+}
+
+body.light-mode {
+background: var(--bg-light);
+}
+
+body.light-mode .text-gray-300,
+body.light-mode p.text-gray-300 {
+color: #000000 !important;
+}
+
+/* Stars Background */
+.star {
+position: absolute;
+background: var(--star-dark);
+border-radius: 50%;
+animation: twinkle 3s infinite ease-in-out;
+}
+
+body.light-mode .star {
+background: var(--star-light);
+opacity: 0.3;
+}
+
+@keyframes twinkle {
+0%, 100% { opacity: 0.3; transform: scale(1); }
+50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Profile Image Animations */
+.profile-border {
+background: conic-gradient(
+from 0deg,
+#06b6d4,
+#3b82f6,
+#8b5cf6,
+#ec4899,
+#06b6d4
+);
+border-radius: 50%;
+animation: rotate 8s linear infinite;
+padding: 4px;
+}
+
+/* About page profile border */
+.profile-border-about {
+background: conic-gradient(
+from 0deg,
+#06b6d4,
+#3b82f6,
+#8b5cf6,
+#ec4899,
+#06b6d4
+);
+border-radius: 1.5rem;
+animation: rotate 10s linear infinite;
+padding: 3px;
+}
+
+
+.profile-image {
+background: var(--bg-dark);
+animation: float 6s ease-in-out infinite;
+}
+
+body.light-mode .profile-image {
+background: var(--bg-light);
+}
+
+@keyframes rotate {
+from { transform: rotate(0deg); }
+to { transform: rotate(360deg); }
+}
+
+@keyframes float {
+0%, 100% { transform: translateY(0px); }
+50% { transform: translateY(-20px); }
+}
+
+/* Text Colors for Light Mode */
+body.light-mode h1 span:first-child {
+color: #1f2937 !important;
+}
+
+body.light-mode .text-gray-300 {
+color: #6b7280 !important;
+}
+
+body.light-mode nav a {
+color: #000000 !important;
+}
+
+body.light-mode nav a:hover {
+color: #06b6d4 !important;
+}
+
+/* Navigation Styles */
+nav {
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
+}
+
+body.light-mode nav {
+background: rgba(255, 255, 255, 0.1) !important;
+border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Theme toggle button in light mode */
+body.light-mode #theme-toggle {
+background: rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Mobile menu button in light mode */
+body.light-mode #mobile-menu-button i {
+color: #1f2937 !important; /* Icon hamburger abu-abu gelap */
+}
+
+/* Button Hover Effects */
+.button-glow {
+box-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+}
+
+/* Mobile menu colors in light mode */
+body.light-mode #mobile-menu {
+background: rgba(255, 255, 255, 0.95) !important;
+backdrop-filter: blur(10px);
+border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode #mobile-menu a {
+color: #1f2937 !important; 
+}
+body.light-mode #mobile-menu a:hover {
+color: #06b6d4 !important; 
+}
+
+/* Responsive Design Improvements */
+@media (max-width: 768px) {
+.profile-border,
+.profile-image {
+width: 280px;
+height: 280px;
+}
+
+h1 {
+font-size: 2.5rem;
+line-height: 1.2;
+}
+
+.text-xl {
+font-size: 1.25rem;
+}
+}
+
+@media (max-width: 480px) {
+.profile-border,
+.profile-image {
+width: 240px;
+height: 240px;
+}
+
+h1 {
+font-size: 2rem;
+}
+
+.text-lg {
+font-size: 1rem;
+}
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+width: 8px;
+}
+
+::-webkit-scrollbar-track {
+background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+background: #06b6d4;
+border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+background: #0891b2;
+}
+
+/* Smooth Transitions */
+* {
+transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Loading Animation */
+.fade-in {
+animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(30px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+/* About Page Specific Styles for Light Mode */
+body.light-mode .bg-white\/5 {
+background: rgba(0, 0, 0, 0.03) !important;
+border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+body.light-mode .bg-white\/10 {
+background: rgba(0, 0, 0, 0.05) !important;
+}
+
+body.light-mode .border-white\/10 {
+border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Gradient backgrounds for light mode */
+body.light-mode .bg-gradient-to-r.from-cyan-400\/10.to-purple-500\/10 {
+background: linear-gradient(to right, rgba(6, 182, 212, 0.1), rgba(139, 92, 246, 0.1)) !important;
+}
+
+body.light-mode .bg-gradient-to-br.from-cyan-400\/20.to-purple-500\/20 {
+background: linear-gradient(to bottom right, rgba(6, 182, 212, 0.15), rgba(139, 92, 246, 0.15)) !important;
+}
+
+/* Card hover effects for light mode */
+body.light-mode .group:hover .bg-white\/5 {
+background: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Stats cards for light mode */
+body.light-mode .bg-white\/5.backdrop-blur-sm {
+background: rgba(255, 255, 255, 0.801) !important;
+border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+body.light-mode .bg-white\/5.backdrop-blur-sm:hover {
+background: rgba(255, 255, 255, 0.9) !important;
+}
+/* Projects File */
+.project-image {
+width: 100%;
+height: 250px;
+background: linear-gradient(135deg, #00ffff20, #8a2be220);
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 3rem;
+color: #00ffff;
+position: relative;
+overflow: hidden;
+}
+
+.project-image::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+transform: translateX(-100%);
+transition: transform 0.6s ease;
+}
+
+.project-card:hover .project-image::before {
+transform: translateX(100%);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+header {
+padding: 15px 20px;
+}
+
+main {
+padding: 0 20px;
+}
+
+.page-title h1 {
+font-size: 2.5rem;
+}
+
+.skills-grid,
+.projects-grid {
+grid-template-columns: 1fr;
+}
+
+.nav-links {
+display: none;
+}
+}
